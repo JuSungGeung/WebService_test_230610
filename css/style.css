@@ -1,0 +1,32 @@
+/*#4.0*/
+/*visibility:hidden은 공간은 그대로 두고 보이지만 않는건데 display:none은 잡아둔 공간도 사라진다*/
+.hidden {
+    display: none;
+}
+/*#6.1 번외*/
+/*
+--사진을 배경이미지로 넣고 싶다면
+img {
+position:absolute;
+width:100%;
+height:100%;
+left: 0px;
+top: 0px;
+right:0px;
+bottom:0px;
+z-index: -1;
+opacity:80%;
+}
+설정 하시면 됩니다. opacity는 취향대로 하시면 되고 z-index는 text의 z-index 보다 낮으면 뒷 배경으로 설정 됩니다.
+*/
+img {
+    position:absolute;
+    width:100%;
+    height:100%;
+    left: 0px;
+    top: 0px;
+    right:0px;
+    bottom:0px;
+    z-index: -1;
+    opacity:80%;
+    }
