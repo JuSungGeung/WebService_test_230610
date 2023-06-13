@@ -31,6 +31,8 @@ function onGeoOk(position) {
             //const city = document.querySelector("#weather span:last-child");
             //weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
             //city.innerText = data.name;
+            const city = document.querySelector("#city span:first-child");
+            city.innerText = data.city.name;
             for (let i = 0; i < data.list.length; i++) {
               //console.log(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
               paintToDo(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
