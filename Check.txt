@@ -1,2 +1,15 @@
 <바닐라 JS로 크롬 앱 만들기>
 #5 ~ #8
+
+https://potato1892.github.io/WebService_test_230610/
+
+https://kronii1.github.io/momentum-first-commit/
+
+37.5683776
+126.9218479
+b950e7dd53ebe06b16659f9510354d9a
+
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+https://api.openweathermap.org/data/2.5/forecast?lat=37.5683776&lon=126.9218479&appid=b950e7dd53ebe06b16659f9510354d9a

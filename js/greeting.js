@@ -59,16 +59,16 @@ if (savedUsername === null) {
 아마 HTML 코딩할때 Edge를 세팅했는데 윈도우에서 기본 브라우져를 크롬으로 해 놔서 그런것 같아요.
 meta http-equiv="X-UA-Compatible" content="IE=edge"
 */
-const link = document.querySelector("a");
+//const link = document.querySelector("a");
 
-function handleLinkClick(event) {
-    //console.log(event);
-    //PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
-    event.preventDefault();
-    console.dir(event);
-}
+//function handleLinkClick(event) {
+//    console.log(event);
+//    PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+//    event.preventDefault();
+//    console.dir(event);
+//}
 
-link.addEventListener("click",handleLinkClick);
+//link.addEventListener("click",handleLinkClick);
 //#endregion
 
 //#region 4.4 Getting Username

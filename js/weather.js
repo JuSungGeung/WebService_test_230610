@@ -1,20 +1,40 @@
 //#region #8
 const API_KEY = "b950e7dd53ebe06b16659f9510354d9a";
 
+const WeatherList = document.getElementById("weather-list");
+
+function paintToDo(weather) {
+  //console.log("i will paint",weather);
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  //li.appendChild(span);//li 안제 span 넣기
+  //span.innerText = weather;
+  //console.log(weather.text);
+  span.innerText = weather;
+  //console.log(li);
+  li.appendChild(span);
+  WeatherList.appendChild(li);
+}
+
 function onGeoOk(position) {
     //console.log(position);
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     //console.log("You live in", lat, lon);
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;//units=metric 화씨온도를 섭씨온도로 변경
+    //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;//units=metric 화씨온도를 섭씨온도로 변경
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;//units=metric 화씨온도를 섭씨온도로 변경
     fetch(url)
         .then((response) => response.json())
         .then((data) => {    
             //console.log(data);
-            const weather = document.querySelector("#weather span:first-child");
-            const city = document.querySelector("#weather span:last-child");
-            weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
-            city.innerText = data.name;
+            //const weather = document.querySelector("#weather span:first-child");
+            //const city = document.querySelector("#weather span:last-child");
+            //weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+            //city.innerText = data.name;
+            for (let i = 0; i < data.list.length; i++) {
+              //console.log(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
+              paintToDo(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
+            }
         });
   }
   function onGeoError() {

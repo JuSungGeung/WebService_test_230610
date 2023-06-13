@@ -45,7 +45,7 @@ function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
-    //li.appendChild(span);//li 안제 span 넣기
+    //li.appendChild(span);//li 안에 span 넣기
     //span.innerText = newTodo;
     //console.log(newTodo.text);
     span.innerText = newTodo.text;
