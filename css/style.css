@@ -19,6 +19,7 @@ opacity:80%;
 }
 설정 하시면 됩니다. opacity는 취향대로 하시면 되고 z-index는 text의 z-index 보다 낮으면 뒷 배경으로 설정 됩니다.
 */
+/*
 img {
     position:absolute;
     width:100%;
@@ -30,3 +31,4 @@ img {
     z-index: -1;
     opacity:50%;
     }
+*/

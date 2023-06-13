@@ -10,8 +10,12 @@ function paintToDo(weather) {
   //li.appendChild(span);//li 안제 span 넣기
   //span.innerText = weather;
   //console.log(weather.text);
-  span.innerText = weather;
+  //span.img = `http://openweathermap.org/img/w/${weather.weathericon}.png`;
+  span.innerText = weather.weatherinfor;
   //console.log(li);
+  const img = document.createElement("img");  
+  img.src = `http://openweathermap.org/img/w/${weather.weathericon}.png`;  
+  li.appendChild(img);
   li.appendChild(span);
   WeatherList.appendChild(li);
 }
@@ -32,10 +36,14 @@ function onGeoOk(position) {
             //weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
             //city.innerText = data.name;
             const city = document.querySelector("#city span:first-child");
-            city.innerText = data.city.name;
+            city.innerText = data.city.name;            
             for (let i = 0; i < data.list.length; i++) {
+              const weatherObj = {
+                weatherinfor: `${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`,
+                weathericon: `${data.list[i].weather[0].icon}`,
+              };
               //console.log(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
-              paintToDo(`${data.list[i].weather[0].main} / ${data.list[i].main.temp} / ${data.list[i].dt_txt}`);
+              paintToDo(weatherObj);
             }
         });
   }
