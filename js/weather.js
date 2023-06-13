@@ -14,7 +14,7 @@ function paintToDo(weather) {
   span.innerText = weather.weatherinfor;
   //console.log(li);
   const img = document.createElement("img");  
-  img.src = `http://openweathermap.org/img/w/${weather.weathericon}.png`;  
+  img.src = `https://openweathermap.org/img/w/${weather.weathericon}.png`;  
   li.appendChild(img);
   li.appendChild(span);
   WeatherList.appendChild(li);
